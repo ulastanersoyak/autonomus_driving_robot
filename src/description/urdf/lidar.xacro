@@ -9,7 +9,7 @@
       <geometry>
         <cylinder radius="${lidar_radius}" length="${lidar_length}" />
       </geometry>
-      <material name="grey" />
+      <material name="red" />
     </visual>
     <collision>
       <geometry>
@@ -26,7 +26,7 @@
   </joint>
    
   <gazebo reference="lidar_link">
-    <material>Gazebo/Purple</material>
+    <material>Gazebo/Red</material>
     <sensor name="lidar" type="ray">
       <pose>0 0 0 0 0 0</pose>
       <visualize>true</visualize>
@@ -49,7 +49,7 @@
         <remapping>~/out:=scan</remapping>
       </ros>
       <output_type>sensor_msgs/LaserScan</output_type>
-      <frame_name>lidar_frame</frame_name>
+      <frame_name>lidar_link</frame_name>
       </plugin>
     </sensor>
   </gazebo>
