@@ -4,6 +4,7 @@ log/
 build/
 install/
 bin/
+.cache/
 lib/
 msg_gen/
 srv_gen/
