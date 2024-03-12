@@ -6,6 +6,8 @@ ensure you have the following dependencies installed on your Ubuntu system:
 - Gazebo
 - CMake
 - Git
+- ROS2 Nav2
+- Slam Toolbox
 
 ## usage
 
