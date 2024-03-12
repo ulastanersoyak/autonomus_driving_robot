@@ -29,7 +29,7 @@ ensure you have the following dependencies installed on your Ubuntu system:
      source install/setup.bash
      ```
 
-   -  zsh:
+   - zsh:
      ```bash
      source install/setup.zsh
      ```
