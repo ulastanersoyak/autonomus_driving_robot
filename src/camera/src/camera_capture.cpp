@@ -15,7 +15,7 @@ class camera_node : public rclcpp::Node {
 
   void
   capture_callback(const sensor_msgs::msg::Image::SharedPtr ros_img) const {
-    auto cv_img =
+    std::shared_ptr<cv_bridge::CvImage> cv_img =
         cv_bridge::toCvCopy(ros_img, sensor_msgs::image_encodings::BGR8);
     cv::cvtColor(cv_img->image, cv_img->image, cv::COLOR_BGR2GRAY);
     cv::GaussianBlur(cv_img->image, cv_img->image, cv::Size{3, 3}, 0.5);
@@ -38,6 +38,7 @@ public:
     RCLCPP_INFO(this->get_logger(), "edge detector is up");
   }
 };
+
 int main(int argc, char **argv) {
   rclcpp::init(argc, argv);
   rclcpp::spin(std::make_shared<camera_node>());
